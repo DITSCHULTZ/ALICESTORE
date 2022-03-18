@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bestilling - Alices Restaurant</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="store.js" async></script>
+    </head>
+    <body>
+      <!--Lavet med inspiration fra https://www.youtube.com/watch?v=YeFzkC2awTM -->
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="forside.html">FORSIDE</a></li>
+                    <li><a href="store.html">BESTIL</a></li>
+                    <li><a href="about.html">OM OS</a></li>
+                </ul>
+            </nav>
+            <section class="logo">
+    <h1><a href="forside.html"> Alices Restaurant</a></h1>
+    <h4> Est. 2010</h4>
+    </section>
+        </header>
+        <section class="container content-section">
+            <h2 class="section-header">Take Away Menu</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Ristaffel</span>
+                    <img class="shop-item-image" src="images/bangkok.png" data-aos="fade-up">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">145 ,-</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Tilføj</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Svinekæber</span>
+                    <img class="shop-item-image" src="images/gris.png" data-aos="flip-up" delay="100000">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">180 ,-</span>
+                        <button class="btn btn-primary shop-item-button"type="button">Tilføj</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Rød karry</span>
+                    <img class="shop-item-image" src="images/gryde.png" data-aos="fade-down">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">165 ,-</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Tilføj</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Bærtærte</span>
+                    <img class="shop-item-image" src="images/tarta.png" data-aos="fade-left">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">80 ,-</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Tilføj</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">Tilbehør</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Brød med smør</span>
+                    <img class="shop-item-image" src="images/bread.png" data-aos="fade-right">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">50 ,-</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Tilføj</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Rejechips</span>
+                    <img class="shop-item-image" src="images/Biscuit.png" data-aos="fade-left">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">40 ,-</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Tilføj</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">KURV</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRIS</span>
+                <span class="cart-quantity cart-header cart-column">ANTAL</span>
+            </div>
+            <div class="cart-items">
+
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">At betale</strong>
+                <span class="cart-total-price">0,-</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">Betal</button>
+        </section>
+        <footer class="main-footer">
+                <h3 class="band-name">Alices Restaurant - Volden 43, 8000 Århus C, Danmark</h3>
+        </footer>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="aos.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forside - Bestilling - Alices Restaurant</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="store.js" async></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    </head>
+
+<body>
+
+  <header class="logo">
+    <h1><a href="forside.html"> Alices Restaurant</a></h1>
+    <h4> Est. 2010</h4>
+    </header>
+
+  <p class="velkommen">
+    Velkommen til Alices Restaurant!
+    </p>
+
+
+    <div id="bestilKnap">
+      <a class="bestil" href="store.html">BESTIL HER</a>
+    </div>
+
+
+    <img class="forside" src="images/vin.jpg">
+
+    <!--Weathermap Jeg har ikke kunne få det til at virke....-->
+        <div id="result"></div>
+
+    <footer class="main-footer">
+            <h3 class="band-name">Alices Restaurant - Volden 43, 8000 Århus C, Danmark</h3>
+    </footer>
+
+      <!-- scripts -->
+      <script src="js/store.js"></script>
+      <script>
+      $(document).ready(function() {
+
+    // get the weather data via query URI
+    fetch("http://api.openweathermap.org/data/2.5/weather?q=Aarhus&lang=da&units=metric&appid=02e1be49efcb454ebc4ca8e350b958d1").then(response => {
+        return response.json();
+    }).then(data => {
+
+        // Work with JSON data here
+        console.log(data); // show what's in the json
+
+        console.log(data.weather[0].description)
+
+        //gæt andre værdier og vis dem
+        // solnedgang
+        var sunsetMs = data.sys.sunset * 1000; // dato-objektet har brug for millisek. Derfor * 1000
+        var sunset = new Date(sunsetMs);
+
+        // Datoformattering @URI < https://www.w3schools.com/js/js_date_methods.asp >
+        var sunsetTime = sunset.getHours() + ":" + sunset.getMinutes();
+
+
+        //vis på skærm
+        result.innerHTML = `
+        <h2> Vejret nu hos Alices i ${data.name}</h2>
+        <p> ${data.weather[0].description}</p>
+      <p> Temperatur: ${data.main.temp}</p>
+      <p> Føles som: ${data.main.feels_like}</p>
+      <p> Fugtighed: ${data.main.humidity}</p>
+      <p> Solnedgang: ${sunsetTime} </p>
+      `
+
+        // append = da. tilføj (noget tilføjes et element med id="result"
+              $('#result').append(
+
+                  // tilføjer ("append") en div til vejroplysninger
+                  '<div class="weatherInfo">' +
+
+                  // tilføjer bynavn
+                  '<h1> ' + data.name + ' </h1>' +
+
+                  // tilføjer en beskrivelse af vejret lige nu
+                  '<h2>Vejr ' + data.weather[0].description + '</h2>' +
+
+                  // tilføjer vejrsymbol
+                  '<figure>' +
+                  '<img src="images/' + data.weather[0].icon + '.png" alt="Vejrsymbol">' +
+                  '</figure>' +
+
+                  // tilføjer klokkeslet for solens nedgang i vest
+                  '<p> Solnedgang: ' + sunsetTime + '</p>' +
+
+                  // afslutter #weatherInfo taggen
+                  '</div>'); // .append til #result slut
+
+              // here are the icons: https://openweathermap.org/weather-conditions
+
+
+      }).catch(err => {
+          // Do something for an error here
+          console.log('There was an error ...');
+      });
+
+      }); // document ready end
+</script>
+
+</body>
+</html>

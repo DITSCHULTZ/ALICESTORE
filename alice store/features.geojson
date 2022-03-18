@@ -1,0 +1,21 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Restaurant": "Alices Restaurant",
+        "billede": "images/lasagne.jpg",
+        "Sted": "Sjælfuld restaurant med kvalitetsmad til gode priser."
+      },
+      "geometry": {
+        "coordinates": [
+          10.20915,
+          56.158577
+        ],
+        "type": "Point"
+      },
+      "id": "39e80aaef265ab6f048c52633964e014"
+    }
+  ],
+  "type": "FeatureCollection"
+}
